@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babil'in En Zengin Adamı - Para Kazanma Rehberi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .nav-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 3px solid #e9ecef;
+            overflow-x: auto;
+        }
+
+        .nav-tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 1em;
+            transition: all 0.3s;
+            white-space: nowrap;
+            color: #495057;
+            font-weight: 500;
+        }
+
+        .nav-tab:hover {
+            background: #e9ecef;
+        }
+
+        .nav-tab.active {
+            background: white;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            margin-bottom: -3px;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .principle {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+
+        .principle h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .principle p {
+            line-height: 1.8;
+            color: #495057;
+            font-size: 1.05em;
+        }
+
+        .calculator {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .input-group {
+            margin: 20px 0;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #495057;
+            font-weight: 600;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.2s;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .result {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 25px;
+            border: 2px solid #667eea;
+        }
+
+        .result h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .result-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            color: #495057;
+            font-weight: 500;
+        }
+
+        .result-value {
+            color: #667eea;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
+        .quote {
+            background: linear-gradient(135deg, #f093fb15 0%, #f5576c15 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #f5576c;
+            font-style: italic;
+            font-size: 1.1em;
+            color: #495057;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 15px;
+            margin: 10px 0;
+            background: white;
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .checklist li:hover {
+            border-color: #667eea;
+            transform: translateX(5px);
+        }
+
+        .checklist li.checked {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border-color: #667eea;
+        }
+
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #667eea;
+            border-radius: 6px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .checkbox.checked::after {
+            content: '✓';
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .progress-section {
+            margin: 30px 0;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #e9ecef;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .nav-tab {
+                padding: 12px 15px;
+                font-size: 0.9em;
+            }
+            
+            .content {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💰 Babil'in En Zengin Adamı</h1>
+            <p>Zenginliğe Giden Yol: Zamansız 7 Altın Prensip</p>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showTab('principles')">7 Altın Kural</button>
+            <button class="nav-tab" onclick="showTab('calculator')">Hesaplayıcı</button>
+            <button class="nav-tab" onclick="showTab('action')">Eylem Planı</button>
+            <button class="nav-tab" onclick="showTab('wisdom')">Hikmet</button>
+        </div>
+
+        <div class="content">
+            <!-- 7 Altın Kural Tab -->
+            <div id="principles" class="tab-content active">
+                <div class="principle">
+                    <h3>1. 📊 Kazandığının En Az %10'unu Biriktir</h3>
+                    <p>
+                        "Kazandığının onda birini kendine ayır." Bu en temel kuraldır. Ne kadar kazanırsanız kazanın, 
+                        %10'unu harcamadan biriktirin. Bu paranız ÇALIŞACAK ve sizin için daha fazla para üretecek. 
+                        %10 kadar az bir oran bile, zaman içinde büyük bir servet oluşturabilir.
+                    </p>
+                </div>
+
+                <div class="principle">
+                    <h3>2. 💹 Harcamalarını Kontrol Et</h3>
+                    <p>
+                        "İhtiyaçların ile isteklerini karıştırma." Kazancınız ne kadar artarsa artsın, harcamalarınız da 
+                        aynı oranda artacaktır - eğer kontrol etmezseniz. Gerçek ihtiyaçlar için harcama yapın, 
+                        her istek için değil. Bütçe yapın ve ona sadık kalın.
+                    </p>
+                </div>
+
+                <div class="principle">
+                    <h3>3. 🌱 Paranı Çalıştır</h3>
+                    <p>
+                        "Altınını çoğalmasını sağla." Biriktirdiğiniz para statik kalmamalı. Onu yatırıma dönüştürün. 
+                        Paranız başka para getirsin, o para da başka para getirsin. Bu compound (bileşik) faizin 
+                        gücüdür - dünyanın 8. harikası!
+                    </p>
+                </div>
+
+                <div class="principle">
+                    <h3>4. 🛡️ Kaybına Karşı Hazine Koru</h3>
+                    <p>
+                        "Sermayeni kaybetmekten sakın." Yatırım yaparken ilk kural: ANAPARA KAYBI YAPMA. 
+                        Uzman olmadığınız alanlara yatırım yapmayın. Çok yüksek getiri vaat edenlere şüpheyle yaklaşın. 
+                        Güvenilir, istikrarlı yatırımları tercih edin.
+                    </p>
+                </div>
+
+                <div class="principle">
+                    <h3>5. 🏠 Kendi Evini Kârlı Bir Yatırım Yap</h3>
+                    <p>
+                        "Kendi evinin sahibi ol." Kira ödemek başkasının servetini artırır. Kendi evinize sahip olmak 
+                        hem barınma ihtiyacınızı karşılar hem de bir varlık oluşturur. Ev sahibi olmak, maliyetlerinizi 
+                        azaltır ve uzun vadede servet biriktirir.
+                    </p>
+                </div>
+
+                <div class="principle">
+                    <h3>6. 👴 Geleceğin Gelirini Güvence Altına Al</h3>
+                    <p>
+                        "Yaşlılığın ve ailen için hazırla." Emeklilik için düzenli olarak yatırım yapın. 
+                        Hayat sigortası ile ailenizi koruyun. Kendinize ve aile bireylerize gelir akışı oluşturacak 
+                        sistemler kurun. Bugün gelecek için hazırlık yaparsanız, yarın rahat edersiniz.
+                    </p>
+                </div>
+
+                <div class="principle">
+                    <h3>7. 🎓 Kazanma Kapasiteni Artır</h3>
+                    <p>
+                        "Kendini geliştir, daha fazla kazan." Sürekli öğrenin, yeni beceriler edinin. 
+                        En iyi yatırım KENDİNİZE yaptığınız yatırımdır. Bilgi ve becerileriniz arttıkça, 
+                        kazanma kapasiteniz de artar. Hiç kimse bilginizi elinizden alamaz.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Hesaplayıcı Tab -->
+            <div id="calculator" class="tab-content">
+                <div class="calculator">
+                    <h3 style="color: #667eea; margin-bottom: 25px;">💰 Servet Hesaplayıcı</h3>
+                    
+                    <div class="input-group">
+                        <label>Aylık Geliriniz (₺)</label>
+                        <input type="number" id="income" placeholder="Örn: 15000" value="15000">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Biriktirme Oranı (%)</label>
+                        <input type="number" id="savingsRate" placeholder="Minimum %10 önerilir" value="10" min="1" max="100">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Yıllık Ortalama Getiri (%)</label>
+                        <input type="number" id="returnRate" placeholder="Örn: 8-12" value="10" min="0" max="100">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Kaç Yıl Biriktirmek İstiyorsunuz?</label>
+                        <input type="number" id="years" placeholder="Örn: 10" value="10" min="1" max="50">
+                    </div>
+
+                    <button class="btn" onclick="calculateWealth()">Hesapla</button>
+
+                    <div id="calculationResult" style="display: none;">
+                        <div class="result">
+                            <h4>📈 Servet Tahminleriniz</h4>
+                            <div class="result-item">
+                                <span class="result-label">Aylık Birikim Miktarı:</span>
+                                <span class="result-value" id="monthlySavings"></span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Yıllık Birikim:</span>
+                                <span class="result-value" id="yearlySavings"></span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Toplam Yatırdığınız Para:</span>
+                                <span class="result-value" id="totalInvested"></span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Kazanılan Faiz:</span>
+                                <span class="result-value" id="interestEarned"></span>
+                            </div>
+                            <div class="result-item" style="border-top: 3px solid #667eea; padding-top: 20px; margin-top: 10px;">
+                                <span class="result-label" style="font-size: 1.2em;">🎯 Toplam Servetiniz:</span>
+                                <span class="result-value" style="font-size: 1.5em;" id="totalWealth"></span>
+                            </div>
+                        </div>
+
+                        <div class="quote" style="margin-top: 25px;">
+                            <strong>Bileşik Faizin Gücü:</strong> Paranızın para kazanması ve o paranın da para kazanması... 
+                            Bu basit formül sayesinde, düzenli ve küçük birikimler bile zamanla büyük servete dönüşür!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eylem Planı Tab -->
+            <div id="action" class="tab-content">
+                <h2 style="color: #667eea; margin-bottom: 20px;">🎯 30 Günlük Eylem Planınız</h2>
+                
+                <div class="quote">
+                    "Bilgi güçtür, ama eylem zenginlik getirir. Bugün başla, yarın değil!"
+                </div>
+
+                <div class="progress-section">
+                    <h3 style="color: #495057; margin-bottom: 15px;">İlerleme Durumunuz</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="width: 0%">%0</div>
+                    </div>
+                    <p style="color: #6c757d; margin-top: 10px;">
+                        <span id="completedTasks">0</span> / <span id="totalTasks">12</span> görev tamamlandı
+                    </p>
+                </div>
+
+                <ul class="checklist" id="actionChecklist">
+                    <li onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div>
+                            <strong>Gün 1-3:</strong> Tüm gelir ve giderlerinizi listeleyin. Nereden ne kadar para geliyor ve nereye gidiyor?
+                        </div>
+                    </li>
+                    <li onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div>
+                            <strong>Gün 4-7:</strong> Aylık gelirinizin %10'unu otomatik olarak ayrı bir hesaba aktaran sistem kurun.
+                        </div>
+                    </li>
+                    <li onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div>
+                            <strong>Gün 8-10:</strong> Gereksiz abonelikleri ve harcamaları belirleyin ve iptal edin.
+                        </div>
+                    </li>
+                    <li onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div>
+                            <strong>Gün 11-14:</strong> Tüm borçlarınızı listeleyin ve ödeme planı oluşturun (önce yüksek faizliler).
+                        </div>
+                    </li>
+                    <li onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div>
+                            <strong>Gün 15-17:</strong> 3-6 aylık acil durum fonu için ayrı bir hesap açın.
+                        </div>
+                    </li>
+                    <li onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div>
+                            <strong>Gün 18-21:</strong> Yatırım seçeneklerini araştırın (hisse, fon, gayrimenkul, altın vb.).
+                        </div>
+                    </li>
+                    <li onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div>
+                            <strong>Gün 22-24:</strong> Finansal danışman ile görüşme ayarlayın veya online eğitim alın.
+                        </div>
+                    </li>
+                    <li onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div>
+                            <strong>Gün 25-26:</strong> İlk küçük yatırımınızı yapın (rahat hissettiğiniz miktar).
+                        </div>
+                    </li>
+                    <li onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div>
+                            <strong>Gün 27:</strong> Emeklilik planınızı gözden geçirin veya oluşturun.
+                        </div>
+                    </li>
+                    <li onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div>
+                            <strong>Gün 28:</strong> Beceri geliştirme için 1 online kurs veya kitap belirleyin.
+                        </div>
+                    </li>
+                    <li onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div>
+                            <strong>Gün 29:</strong> Aylık bütçe ve yatırım takip sistemi oluşturun (Excel veya uygulama).
+                        </div>
+                    </li>
+                    <li onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div>
+                            <strong>Gün 30:</strong> İlerlemenizi değerlendirin ve önümüzdeki ay için hedefler belirleyin!
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Hikmet Tab -->
+            <div id="wisdom" class="tab-content">
+                <h2 style="color: #667eea; margin-bottom: 25px;">📜 Babil'den Altın Öğütler</h2>
+
+                <div class="quote">
+                    "Altın, onu doğru kanunlara göre kullanan kişinin yanında seve seve kalır ve çoğalır."
+                </div>
+
+                <div class="principle">
+                    <h3>💎 Servetin Beş Kanunu</h3>
+                    <p style="margin-bottom: 15px;"><strong>1. Kanun:</strong> Altın, kazancının en az onda birini düzenli olarak biriktiren kişiye seve seve ve artan miktarlarda gelir.</p>
+                    <p style="margin-bottom: 15px;"><strong>2. Kanun:</strong> Altın, çalışacak yer bulan kişi için gayretle çalışır ve çoğalır.</p>
+                    <p style="margin-bottom: 15px;"><strong>3. Kanun:</strong> Altın, tedbirli sahiplerinin himayesinde kalır; bu kişiler bilge insanların tavsiyelerine göre yatırım yaparlar.</p>
+                    <p style="margin-bottom: 15px;"><strong>4. Kanun:</strong> Altın, sahibinin tanımadığı işlere veya deneyimli kişilerin onaylamadığı yatırımlara koyan kişiden kaçar.</p>
+                    <p><strong>5. Kanun:</strong> Altın, imkansız kazançların peşinde koşan, dolandırıcıların hileli tavsiyelerine uyan veya kendi deneyimsizliğine güvenen kişiden kaçar.</p>
+                </div>
+
+                <div class="quote">
+                    "Şans bekleyenler üzerinde hiçbir kontrolü olmayan güçlere güvenir. Fırsatı arayanlar ise kendi kaderlerini şekillendirmek için adım atarlar."
+                </div>
+
+                <div class="principle">
+                    <h3>🎯 Arkadaş'ın Öğütleri</h3>
+                    <p style="margin-bottom: 10px;">• Şans ile fırsatı karıştırma - şans beklemektir, fırsat aramaktır</p>
+                    <p style="margin-bottom: 10px;">• Borç bir düşmandır - ondan kaçın, onu ödeyin, onu yenin</p>
+                    <p style="margin-bottom: 10px;">• Küçük kazançları küçümseme - küçük damlalar büyük denizleri oluşturur</p>
+                    <p style="margin-bottom: 10px;">• Yemek masasında tutumlu ol - yediğin seni değil, sindirebileceğin seni besler</p>
+                    <p style="margin-bottom: 10px;">• Bilge insanlardan tavsiye al - kendi deneyimleri pahalıdır, onlarınkiler bedavadır</p>
+                    <p>• İşini sev - zira çalışmak hayatın kendisidir, onu seven bereketli olur</p>
+                </div>
+
+                <div class="quote">
+                    "Servet sahibi olmak zor değildir. Bu, öncelikle bir alışkanlık meselesidir. Kazandığının bir kısmını sakladıktan sonra kalan kısmı yaşamaktır."
+                </div>
+
+                <div class="principle">
+                    <h3>⚠️ Kaçınılması Gerekenler</h3>
+                    <p style="margin-bottom: 10px;"><strong>❌ "Kolay para" vaatlerine inanma:</strong> Çok hızlı zengin olma vaat eden planlar genellikle felaket getirir.</p>
+                    <p style="margin-bottom: 10px;"><strong>❌ Bilmediğin işlere yatırım yapma:</strong> Anlamadığın işlere asla para yatırma.</p>
+                    <p style="margin-bottom: 10px;"><strong>❌ Bütün yumurtaları tek sepete koyma:</strong> Riskini dağıt, çeşitlendir.</p>
+                    <p style="margin-bottom: 10px;"><strong>❌ Dürtüsel harcama yapma:</strong> Büyük alımlar öncesi 24 saat bekle ve düşün.</p>
+                    <p style="margin-bottom: 10px;"><strong>❌ Başkalarını etkilemek için harcama:</strong> Gösteriş için harcanan para kayıptır.</p>
+                    <p><strong>❌ Sürekli erteleme:</strong> "Yarın başlarım" diyenler hiç başlamaz. Bugün başla!</p>
+                </div>
+
+                <div class="quote">
+                    "İrade gücü şudur: İsteklerini, ancak onları gerçekleştirmek için paranın olması halinde tatmin edebilmek."
+                </div>
+
+                <div class="principle">
+                    <h3>🌟 Son Söz</h3>
+                    <p>
+                        Babil'in en zengin adamı Arkad'ın hikayesi bize gösteriyor ki, servet sırlar veya şans meselesi değildir. 
+                        Basit, evrensel prensiplere uyarak, disiplinli bir şekilde uygulayarak herkes servet biriktirebilir. 
+                        <br><br>
+                        Anahtar, bu bilgiyi UYGULAMAYA koymaktır. Bu prensipler 4000 yıl önce Babil'de geçerliydi, 
+                        bugün de geçerli. Yarın da geçerli olacak.
+                        <br><br>
+                        <strong style="color: #667eea; font-size: 1.1em;">Şimdi sıra sende! Bugün ilk adımı at. 💪</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Remove active class from all nav tabs
+            const navTabs = document.querySelectorAll('.nav-tab');
+            navTabs.forEach(tab => tab.classList.remove('active'));
+
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+
+            // Add active class to clicked nav tab
+            event.target.classList.add('active');
+        }
+
+        function calculateWealth() {
+            const income = parseFloat(document.getElementById('income').value);
+            const savingsRate = parseFloat(document.getElementById('savingsRate').value) / 100;
+            const returnRate = parseFloat(document.getElementById('returnRate').value) / 100;
+            const years = parseInt(document.getElementById('years').value);
+
+            if (!income || !savingsRate || !returnRate || !years) {
+                alert('Lütfen tüm alanları doldurun!');
+                return;
+            }
+
+            const monthlySavings = income * savingsRate;
+            const yearlySavings = monthlySavings * 12;
+            const monthlyRate = returnRate / 12;
+            const totalMonths = years * 12;
+
+            // Future Value of Annuity formula
+            let totalWealth = monthlySavings * (((Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate) * (1 + monthlyRate));
+            const totalInvested = monthlySavings * totalMonths;
+            const interestEarned = totalWealth - totalInvested;
+
+            // Display results
+            document.getElementById('monthlySavings').textContent = formatCurrency(monthlySavings);
+            document.getElementById('yearlySavings').textContent = formatCurrency(yearlySavings);
+            document.getElementById('totalInvested').textContent = formatCurrency(totalInvested);
+            document.getElementById('interestEarned').textContent = formatCurrency(interestEarned);
+            document.getElementById('totalWealth').textContent = formatCurrency(totalWealth);
+
+            document.getElementById('calculationResult').style.display = 'block';
+        }
+
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('tr-TR', {
+                style: 'currency',
+                currency: 'TRY',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            }).format(amount);
+        }
+
+        function toggleCheck(element) {
+            element.classList.toggle('checked');
+            const checkbox = element.querySelector('.checkbox');
+            checkbox.classList.toggle('checked');
+            
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('#actionChecklist li');
+            const checkedBoxes = document.querySelectorAll('#actionChecklist li.checked');
+            const total = checkboxes.length;
+            const completed = checkedBoxes.length;
+            const percentage = Math.round((completed / total) * 100);
+
+            document.getElementById('progressFill').style.width = percentage + '%';
+            document.getElementById('progressFill').textContent = '%' + percentage;
+            document.getElementById('completedTasks').textContent = completed;
+            document.getElementById('totalTasks').textContent = total;
+
+            // Save progress to localStorage
+            const checkedIndices = Array.from(checkedBoxes).map(box => 
+                Array.from(checkboxes).indexOf(box)
+            );
+            localStorage.setItem('wealthPlanProgress', JSON.stringify(checkedIndices));
+        }
+
+        // Load progress from localStorage on page load
+        window.addEventListener('load', function() {
+            const savedProgress = localStorage.getItem('wealthPlanProgress');
+            if (savedProgress) {
+                const checkedIndices = JSON.parse(savedProgress);
+                const checkboxes = document.querySelectorAll('#actionChecklist li');
+                checkedIndices.forEach(index => {
+                    if (checkboxes[index]) {
+                        checkboxes[index].classList.add('checked');
+                        checkboxes[index].querySelector('.checkbox').classList.add('checked');
+                    }
+                });
+                updateProgress();
+            }
+        });
+    </script>
+</body>
+</html>
